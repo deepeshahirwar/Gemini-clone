@@ -38,11 +38,14 @@
 
 } 
 
-.main .greet span{
+.main .greet span, .nav p{
     background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;   
 } 
+.nav p{
+    font-weight: 500;
+}
 
 .main .cards{
     display: grid; 
@@ -161,7 +164,21 @@
   align-items: start;
   gap: 20px;
 } 
-
+ 
+.copy-icon{ 
+    margin-top: 5px;
+     width: 70px;
+     cursor: pointer;  
+     border: none; 
+     border-radius: 5px;
+     padding: 5px; 
+     background-color: #eaecee;
+} 
+.copy-icon:hover{
+    background-color:black; 
+    color: #eaecee; 
+    transition: 0.5s ease-in-out;
+}
 .loader{
     width: 100%;
     display: flex;
@@ -195,7 +212,7 @@
 @media (max-width: 600px) {
    .main-bottom input{
     flex: none;
-    width: 150px;
+    width: 180px;
 
    } 
    .main-bottom img{
@@ -206,6 +223,19 @@
    } 
    .search-box div{
     gap:5px; 
-    margin-left: 90px;
-   }
+   margin-left: 90px;
+    
+   }  
+
+   .main-container .cards{ 
+    height: 45px; 
+    /* display: none; */
+   } 
+    .main-container .cards .card{
+        height: 100%;
+    } 
+    .result-data {
+        flex-direction: column;
+        gap: 5px;
+    }
 }

@@ -38,7 +38,9 @@ const ContextProvider = (props) => {
             }
         }, 1); // Adjust delay as needed (50ms for example)
     };
-
+ 
+    
+   
     const onSend = async (prompt) => {
         setShowResult(true); 
         setLoading(true); 
@@ -56,10 +58,29 @@ const ContextProvider = (props) => {
 
         const formattedResponse = formatResponse(response);
         deleyPara(formattedResponse);
-
+         
         setLoading(false);
         setInput("");
+    }  
+
+     // Function to strip HTML tags
+     const stripHtmlTags = (html) => {
+        const tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
     }
+
+// for text copy from output section 
+const copyToClipboard = () => { 
+    const CopyedData = stripHtmlTags(resultData);
+    navigator.clipboard.writeText(CopyedData)
+        .then(() => {
+            console.log('Text copied to clipboard');
+        })
+        .catch(err => {
+            console.error('Error copying text: ', err);
+        });
+}
 
     const contextValue = {
         prevPrompts,
@@ -71,7 +92,8 @@ const ContextProvider = (props) => {
         showResult,
         loading,
         resultData,
-        onSend
+        onSend,
+        copyToClipboard
     }
 
     return (
