@@ -38,13 +38,14 @@
 
 } 
 
-.main .greet span, .nav p{
+.main .greet span{
     background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;   
 } 
 .nav p{
-    font-weight: 500;
+    font-weight: 400; 
+    color:rgba(17, 16, 16, 0.801);
 }
 
 .main .cards{
@@ -212,7 +213,7 @@
 @media (max-width: 600px) {
    .main-bottom input{
     flex: none;
-    width: 180px;
+    width: 150px;
 
    } 
    .main-bottom img{
@@ -237,5 +238,8 @@
     .result-data {
         flex-direction: column;
         gap: 5px;
+    } 
+    .main-container .cards #suggest{
+        display: none;
     }
 }

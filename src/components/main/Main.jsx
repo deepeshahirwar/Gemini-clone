@@ -25,7 +25,7 @@ export const Main = () => {
         {!showResult
           ?<> 
             <div className="greet">
-              <p><span>Hello, Deepesh.</span></p>
+              <p><span>Hello, World.</span></p>
               <p>How can I help you today?</p>
             </div>
 
@@ -40,12 +40,12 @@ export const Main = () => {
                 <img src={assets.bulb_icon} alt="" />
               </div>
 
-              <div className="card">
+              <div className="card" id='suggest'>
                 <p>Suggest beaches to visit in a city, including details</p>
                 <img src={assets.message_icon} alt="" />
               </div>
 
-              <div className="card">
+              <div className="card" id='suggest'>
                 <p>Write a product description for a new type of toothbrush</p>
                 <img src={assets.code_icon} alt="" />
               </div>
