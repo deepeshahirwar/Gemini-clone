@@ -5,7 +5,7 @@ import { Context } from '../../context/Context';
 
 export const Main = () => {  
   const [isCopy, setIsCopy] = useState(false);
- 
+  const [extended, setExtended] = useState(false);
   const { onSend, recentPrompt, showResult, loading, resultData, setInput, input, copyToClipboard } = useContext(Context);
 
   const handleCopyClick = () => {
@@ -16,7 +16,8 @@ export const Main = () => {
 
   return (
     <div className="main">
-      <div className="nav">
+      <div className="nav"> 
+       
         <p>ChatNext</p>
         <img src={assets.user_icon} alt="" />
       </div> 
